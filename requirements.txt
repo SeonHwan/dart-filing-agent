@@ -1,0 +1,16 @@
+python-dotenv   # .env 로드 (QDRANT_URL)
+
+# 청킹 / 임베딩 — 임베딩 모델은 bge-m3(로컬, BAAI/bge-m3)
+transformers    # chunk_sections.py가 AutoTokenizer를 직접 씀(토큰 카운팅용, 전이 의존이지만 명시)
+numpy           # embed_and_index.py의 임베딩 캐시(.npz)
+
+# 벡터DB 클라이언트 — 서버는 별도 저장소(dart-filing-qdrant-server)에서 로컬 Docker로 운용
+qdrant-client
+
+# 하이브리드 검색 — sparse 벡터는 sentence-transformers로 못 뽑는다. bge-m3의 lexical
+# weight는 hidden state 위에 linear+ReLU 헤드를 얹어 만들어지고 그 헤드가 ST 경로에 없다.
+# FlagEmbedding의 BGEM3FlagModel이 dense/sparse/colbert를 한 번의 forward로 준다.
+FlagEmbedding
+# torch는 위 패키지들의 전이 의존이지만 bge_m3.release_accelerator_memory()에서 직접 import한다
+# (필링 사이에 MPS/CUDA 캐시를 비우는 용도).
+torch

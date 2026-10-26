@@ -1,0 +1,26 @@
+컬렉션 dart_filings_hybrid: 포인트 41,436개
+  KB금융               13,083
+  NAVER               6,966
+  SK이노베이션            10,760
+  삼성바이오로직스            4,885
+  삼성전자                5,742
+
+
+컬렉션 dart_filings_hybrid / mode=dense / top-50 / 질문 8개
+==============================================================================
+id                      종류             첫정답순위    top1점수    top10표비율
+------------------------------------------------------------------------------
+samsung-segments        narrative         16    0.6817        80%
+kb-capital-ratio        table            >50    0.3761         0%
+samsung-revenue-table   table              5    0.6893       100%
+samsung-employees       table              1    0.6365        80%
+kb-total-equity         table            >50    0.1372        90%
+naver-board             narrative        >50    0.3523       100%
+sk-risk                 narrative         35    0.7104        10%
+bio-cmo                 narrative          1    0.6900         0%
+------------------------------------------------------------------------------
+전체          (n=8)  recall@1   25%  recall@5   38%  recall@10   38%  recall@50   62%  MRR 0.286  top10표비율 57%
+표 질문        (n=4)  recall@1   25%  recall@5   50%  recall@10   50%  recall@50   50%  MRR 0.300  top10표비율 68%
+서술 질문       (n=4)  recall@1   25%  recall@5   25%  recall@10   25%  recall@50   75%  MRR 0.273  top10표비율 48%
+
+판정: 표 질문의 recall@50가 낮으면 청킹/어휘 문제(1~3단계 선행), recall@50는 높은데 recall@1/5가 낮으면 순위 문제(리랭커 선행).

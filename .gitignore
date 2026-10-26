@@ -1,0 +1,45 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 원본 사업보고서/manifest — 용량이 크고 재생성 가능. GitHub엔 코드만 올리고,
+# 실제 데이터는 HF Spaces의 Storage Bucket에 두거나 필요시 GitHub Release로 배포.
+data/
+corpCode.zip
+
+# 진단용 임시 입력/압축본
+pc_req.txt
+dart_xml.tgz
+
+# 작업 로그와 실행 흔적 (로컬에만 둔다)
+/STATUS.md
+/dart_extractor.txt
+/decision_result.txt
+/error.txt
+/eval_baseline.txt
+/eval_rerank.txt
+/eval_s3_hybrid.txt
+/eval_s4_hybrid.txt
+/eval_s4_rerank.txt
+/eval_s6_hybrid.txt
+/eval_s6b_hybrid.txt
+/eval_s7_dense_all.txt
+/eval_s7_dense_p.txt
+/eval_s7_hybrid_all.txt
+/eval_s7_hybrid_p.txt
+/eval_s7_risk.txt
+/eval_s7_sparse_all.txt
+/eval_s7_sparse_p.txt
+/eval_s8_hybrid.txt
+/eval_s8_risk.txt
+/eval_stage1.txt
+/fact_store.txt
+/label_joint.txt
+/order_result.txt
+/order_result2.txt
+/order_result3.txt
+/order_result4.txt
+/order_result5.txt
+/s9_command.txt

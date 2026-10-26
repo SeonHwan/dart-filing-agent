@@ -1,0 +1,30 @@
+컬렉션 dart_filings_s9: 포인트 36,449개
+  KB금융               12,190
+  NAVER               5,926
+  SK이노베이션             9,100
+  삼성바이오로직스            4,265
+  삼성전자                4,968
+
+
+컬렉션 dart_filings_s9 / mode=hybrid / top-50 / 질문 8개
+=========================================================================================
+id                      종류             첫정답순위     RRF점수    top10표비율      라벨통과율
+-----------------------------------------------------------------------------------------
+samsung-segments        narrative         12    0.5588        40%         8%
+kb-capital-ratio        table              1    0.5000       100%        38%
+samsung-revenue-table   table              1    0.5227        50%        24%
+samsung-employees       table              1    0.5385       100%        14%
+kb-total-equity         table              1    0.5000       100%        20%
+naver-board             narrative          1    0.5000        70%       40%!
+sk-risk                 narrative        >50    0.5000        60%         0%
+bio-cmo                 narrative          1    0.8333         0%        22%
+-----------------------------------------------------------------------------------------
+전체          (n=8)  recall@1   75%  recall@5   75%  recall@10   75%  recall@50   88%  MRR 0.760  top10표비율 65%
+표 질문        (n=4)  recall@1  100%  recall@5  100%  recall@10  100%  recall@50  100%  MRR 1.000  top10표비율 88%
+서술 질문       (n=4)  recall@1   50%  recall@5   50%  recall@10   50%  recall@50   75%  MRR 0.521  top10표비율 43%
+
+!! 라벨통과율 40% 이상: naver-board(40%)
+   후보 중 이만큼이 정답으로 계산된다 — 이 질문들의 recall/MRR 변화는 검색 품질이
+   아니라 라벨의 느슨함을 반영할 수 있다. --dump로 실제 청크를 보고 라벨을 좁힐 것.
+
+판정: 표 질문의 recall@50가 낮으면 청킹/어휘 문제(1~3단계 선행), recall@50는 높은데 recall@1/5가 낮으면 순위 문제(리랭커 선행).
